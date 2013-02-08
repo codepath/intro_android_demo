@@ -23,19 +23,23 @@ public class PersistSettingsActivity extends Activity {
 		setContentView(R.layout.activity_persist_settings);
 		txtPersist = (TextView) findViewById(R.id.txtPersistText);
 		chkPersist = (CheckBox) findViewById(R.id.chkPersistState);
-		prefs = getSharedPreferences("view", 0);
-		edits = prefs.edit();
-		String persistedText = prefs.getString("txtVal", "None Stored Yet");
-		boolean isChecked = prefs.getBoolean("chkState", false);
-		txtPersist.setText(persistedText);
-		chkPersist.setChecked(isChecked);
 	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_persist_settings, menu);
 		return true;
+	}
+	
+	public void populateValues() {
+		prefs = getSharedPreferences("view", 0);
+		edits = prefs.edit();
+		String persistedText = prefs.getString("txtVal", "None Stored Yet");
+		boolean isChecked = prefs.getBoolean("chkState", false);
+		txtPersist.setText(persistedText);
+		chkPersist.setChecked(isChecked);
 	}
 	
 	public void persistValues(View v) {

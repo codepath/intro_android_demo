@@ -23,7 +23,6 @@ public class SpinnerWithToastActivity extends Activity {
 	}
 
 	private void loadSpinner() {
-		 
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
 		  R.array.spinner_options, android.R.layout.simple_spinner_item);
 		// Set layout style during dropdown

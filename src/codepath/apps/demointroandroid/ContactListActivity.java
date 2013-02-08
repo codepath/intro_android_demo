@@ -27,6 +27,10 @@ public class ContactListActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_contact_list);
 		loadContacts();
+		populateListView();
+	}
+
+	private void populateListView() {
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, 
 		  android.R.layout.simple_list_item_1, names);
 

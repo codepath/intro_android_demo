@@ -6,8 +6,9 @@
 
     <TextView
         android:id="@+id/tvMain"
-        android:background="#000"
-        android:textColor="#fff"
+        android:background="#06327a"
+        android:textColor="#cbd9f0"
+        android:padding="15dp"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

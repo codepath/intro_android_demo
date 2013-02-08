@@ -19,6 +19,10 @@ public class GridViewDemoActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_grid_view_demo);
+		populateGridViewImages();
+	}
+
+	private void populateGridViewImages() {
 		gvImages = (GridView) findViewById(R.id.gvImages);
 		String[] numbers = new String[] { "ad", "ae", "af", "ag", "ai", "al"};
 		adapter = new GridImageAdapter(this,

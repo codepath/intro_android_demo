@@ -28,7 +28,6 @@ public class IntentWithResultActivity extends Activity {
 	}
 	
 	public void enterText(View v) {
-		Log.d("DEBUG", ContactsContract.Contacts.CONTENT_URI.toString());
 		startActivityForResult(
 				  new Intent(IntentWithResultActivity.this, SimpleReturnResultActivity.class), 
 				    GET_RESULT_TEXT);
