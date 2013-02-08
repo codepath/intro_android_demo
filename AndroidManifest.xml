@@ -4,6 +4,9 @@
     package="codepath.apps.demointroandroid"
     android:versionCode="2"
     android:versionName="2.0" >
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -46,6 +49,86 @@
         <activity
             android:name="codepath.apps.demointroandroid.SimpleListViewActivity"
             android:label="@string/title_activity_simple_list_view" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.BasicClickHandlersActivity"
+            android:label="@string/title_activity_basic_click_handlers" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.ButtonToastActivity"
+            android:label="@string/title_activity_button_toast" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.ListViewClicksActivity"
+            android:label="@string/title_activity_list_view_clicks" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.ExplicitIntentActivity"
+            android:label="@string/title_activity_explicit_intent" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.ImplicitIntentsActivity"
+            android:label="@string/title_activity_implicit_intents" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.IntentWithResultActivity"
+            android:label="@string/title_activity_intent_with_result" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.ActionBarMenuActivity"
+            android:label="@string/title_activity_action_bar_menu" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.SimpleBundleDemoActivity"
+            android:label="@string/title_activity_simple_bundle_demo" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.SimpleReturnResultActivity"
+            android:label="@string/title_activity_simple_return_result" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.BasicImageDownloadActivity"
+            android:label="@string/title_activity_basic_image_download" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.AsyncTaskPerformActivity"
+            android:label="@string/title_activity_async_task_perform" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.SmartImageDownloadActivity"
+            android:label="@string/title_activity_smart_image_download" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.ToastFormInputsActivity"
+            android:label="@string/title_activity_toast_form_inputs" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.SpinnerWithToastActivity"
+            android:label="@string/title_activity_spinner_with_toast" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.TimePickerDemoActivity"
+            android:label="@string/title_activity_time_picker_demo" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.ProgressBarActivity"
+            android:label="@string/title_activity_progress_bar" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.GridViewDemoActivity"
+            android:label="@string/title_activity_grid_view_demo" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.PersistSettingsActivity"
+            android:label="@string/title_activity_persist_settings" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.ContactListActivity"
+            android:label="@string/title_activity_contact_list" >
+        </activity>
+        <activity
+            android:name="codepath.apps.demointroandroid.PublishingInstructionsActivity"
+            android:label="@string/title_activity_publishing_instructions" >
         </activity>
     </application>
 

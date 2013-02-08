@@ -12,5 +12,25 @@
     <string name="title_activity_basic_views">BasicViewsActivity</string>
     <string name="title_activity_view_attributes">ViewAttributesActivity</string>
     <string name="title_activity_simple_list_view">SimpleListViewActivity</string>
+    <string name="title_activity_basic_click_handlers">BasicClickHandlersActivity</string>
+    <string name="title_activity_button_toast">ButtonToastActivity</string>
+    <string name="title_activity_list_view_clicks">ListViewClicksActivity</string>
+    <string name="title_activity_explicit_intent">ExplicitIntentActivity</string>
+    <string name="title_activity_implicit_intents">ImplicitIntentsActivity</string>
+    <string name="title_activity_intent_with_result">IntentWithResultActivity</string>
+    <string name="title_activity_action_bar_menu">ActionBarMenuActivity</string>
+    <string name="title_activity_simple_bundle_demo">SimpleBundleDemoActivity</string>
+    <string name="title_activity_simple_return_result">SimpleReturnResultActivity</string>
+    <string name="title_activity_basic_image_download">BasicImageDownloadActivity</string>
+    <string name="title_activity_async_task_perform">AsyncTaskPerformActivity</string>
+    <string name="title_activity_smart_image_download">SmartImageDownloadActivity</string>
+    <string name="title_activity_toast_form_inputs">ToastFormInputsActivity</string>
+    <string name="title_activity_spinner_with_toast">SpinnerWithToastActivity</string>
+    <string name="title_activity_time_picker_demo">TimePickerDemoActivity</string>
+    <string name="title_activity_progress_bar">ProgressBarActivity</string>
+    <string name="title_activity_grid_view_demo">GridViewDemoActivity</string>
+    <string name="title_activity_persist_settings">PersistSettingsActivity</string>
+    <string name="title_activity_contact_list">ContactListActivity</string>
+    <string name="title_activity_publishing_instructions">PublishingInstructionsActivity</string>
 
 </resources>

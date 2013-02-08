@@ -27,8 +27,7 @@
     </string-array>
     <string-array name="chap4">
         <item>Basic Click Handlers</item>
-        <item>Button with Toast</item>
-        <item>ListView Clicks</item>
+        <item>Handling ListView Clicks</item>
     </string-array>
     <string-array name="chap5">
         <item>Explicit Intents</item>

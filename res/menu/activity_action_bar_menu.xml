@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+		android:id="@+id/menu_toast"
+		android:icon="@drawable/ic_launcher"
+		android:showAsAction="ifRoom|withText"
+		android:title="Toast" />
+    
+    <item
+		android:id="@+id/menu_launch"
+		android:icon="@drawable/ic_launcher"
+		android:showAsAction="ifRoom|withText"
+		android:title="Second" />
+
+</menu>

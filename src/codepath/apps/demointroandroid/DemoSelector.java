@@ -87,21 +87,22 @@ public class DemoSelector extends Activity {
         public TextView getGenericView() {
             // Layout parameters for the ExpandableListView
             AbsListView.LayoutParams lp = new AbsListView.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, 64);
+                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
             TextView textView = new TextView(DemoSelector.this);
             textView.setLayoutParams(lp);
             // Center the text vertically
+            textView.setTextSize(20);
             textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
             // Set the text starting position
-            textView.setPadding(55, 0, 0, 0);
+            textView.setPadding(60, 20, 20, 20);
             return textView;
         }
 
         public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
                 View convertView, ViewGroup parent) {
             TextView textView = getGenericView();
-            textView.setPadding(80, 0, 0, 0);
+            textView.setPadding(80, 20, 20, 20);
             textView.setText(getChild(groupPosition, childPosition).toString());
             return textView;
         }

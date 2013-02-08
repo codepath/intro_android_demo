@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PublishingInstructionsActivity" >
+    
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp"
+        android:text="Publishing Instructions" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp" 
+        android:textStyle="bold"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="1. Export your application as an APK (Android Package) file." />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginBottom="10dp"
+        android:text="2. Generate your own self-signed certificate and digitally sign your application with it." />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="3. Deploy the signed application." />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="4. Use the Android Market for hosting and selling your application." />
+    
+
+</LinearLayout>

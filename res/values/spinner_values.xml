@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_options">
+       <item>Red</item>
+       <item>Orange</item>
+       <item>Yellow</item>
+       <item>Green</item>
+       <item>Blue</item>
+       <item>Indigo</item>
+       <item>Violet</item>
+    </string-array>
+</resources>

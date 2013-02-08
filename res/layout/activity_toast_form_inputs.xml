@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ToastFormInputsActivity" >
+
+    <EditText
+        android:id="@+id/etVal"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:hint="Enter Text"
+        android:layout_height="wrap_content"
+        android:ems="10" />
+
+    <CheckBox
+        android:id="@+id/chkVal"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check or Uncheck" />
+
+    <RadioGroup
+        android:id="@+id/rdgVal"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/rbOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="First" />
+
+        <RadioButton
+            android:id="@+id/rbTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Second" />
+        
+        <RadioButton
+            android:id="@+id/rbThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Three" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="toastInputs"
+        android:text="Submit" />
+
+</LinearLayout>
