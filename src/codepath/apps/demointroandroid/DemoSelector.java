@@ -19,13 +19,10 @@ public class DemoSelector extends Activity {
 	ExpandableListView elvChapters;
 	ChaptersListAdapter elaAdapter;
 
-	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_demo_selector);
-		if (android.os.Build.VERSION.SDK_INT >= 11)
-			getActionBar().setTitle("Choose Demo Project");
 	    setupChaptersListView();
 	}
 

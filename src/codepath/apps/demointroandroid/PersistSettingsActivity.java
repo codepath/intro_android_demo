@@ -23,6 +23,9 @@ public class PersistSettingsActivity extends Activity {
 		setContentView(R.layout.activity_persist_settings);
 		txtPersist = (TextView) findViewById(R.id.txtPersistText);
 		chkPersist = (CheckBox) findViewById(R.id.chkPersistState);
+		prefs = getSharedPreferences("view", 0);
+		edits = prefs.edit();
+		populateValues();
 	}
 	
 
@@ -34,8 +37,6 @@ public class PersistSettingsActivity extends Activity {
 	}
 	
 	public void populateValues() {
-		prefs = getSharedPreferences("view", 0);
-		edits = prefs.edit();
 		String persistedText = prefs.getString("txtVal", "None Stored Yet");
 		boolean isChecked = prefs.getBoolean("chkState", false);
 		txtPersist.setText(persistedText);
