@@ -1,14 +1,16 @@
 package codepath.apps.demointroandroid;
 
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.BinaryHttpResponseHandler;
-
-import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.view.Menu;
 import android.widget.ImageView;
+
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.BinaryHttpResponseHandler;
+
+import cz.msebera.android.httpclient.Header;
 
 public class SmartImageDownloadActivity extends Activity {
 
@@ -23,13 +25,19 @@ public class SmartImageDownloadActivity extends Activity {
 		AsyncHttpClient client = new AsyncHttpClient();
 		client.get(address, new
 				BinaryHttpResponseHandler() {
-		        @Override
-		        public void onSuccess(byte[] image) {
-		        	Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
-		        	ImageView img = (ImageView) findViewById(R.id.ivSmartImage); 
-					img.setImageBitmap(bitmap);	
-		        }
-		    }
+					@Override
+					public void onSuccess(int statusCode, Header[] headers, byte[] image) {
+						Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
+						ImageView img = (ImageView) findViewById(R.id.ivSmartImage);
+						img.setImageBitmap(bitmap);
+
+					}
+
+					@Override
+					public void onFailure(int statusCode, Header[] headers, byte[] binaryData, Throwable error) {
+						error.printStackTrace();
+					}
+				}
 		);
 	}
 
