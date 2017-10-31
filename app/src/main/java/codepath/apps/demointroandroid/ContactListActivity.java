@@ -57,11 +57,9 @@ public class ContactListActivity extends Activity {
 		Cursor c = cursorLoader.loadInBackground();
 		if (c.moveToFirst()) { 
 			do {
-			     // Get Contact ID
 				int idIndex = c.getColumnIndex(ContactsContract.Contacts._ID);
 				String contactID = c.getString(idIndex);
 
-				// Get Contact Name
 				int nameIndex = c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME);
 				String contactDisplayName = c.getString(nameIndex);
 				names.add(contactDisplayName);
