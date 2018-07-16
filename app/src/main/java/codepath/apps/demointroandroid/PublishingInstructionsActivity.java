@@ -8,6 +8,7 @@ public class PublishingInstructionsActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		// Something something, something something
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_publishing_instructions);
 	}
