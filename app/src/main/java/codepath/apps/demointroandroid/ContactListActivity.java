@@ -1,14 +1,14 @@
 package codepath.apps.demointroandroid;
 
-import java.util.ArrayList;
-
-import android.net.Uri;
-import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.CursorLoader;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -18,15 +18,24 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class ContactListActivity extends Activity {
-	
+
+	private static final int REQUEST_READ_CONTACTS = 1;
 	ArrayList<String> names = new ArrayList<String>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_contact_list);
-		loadContacts();
+		if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_CONTACTS)
+				== PackageManager.PERMISSION_GRANTED) {
+			loadContacts();
+		} else {
+			ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_CONTACTS},
+					REQUEST_READ_CONTACTS);
+		}
 		populateListView();
 	}
 
@@ -42,6 +51,19 @@ public class ContactListActivity extends Activity {
 				Toast.makeText(ContactListActivity.this, names.get(position), Toast.LENGTH_SHORT).show();
 			}
 		});
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode,
+										   String permissions[], int[] grantResults) {
+		if (requestCode == REQUEST_READ_CONTACTS) {
+			if (grantResults.length > 0
+					&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+				loadContacts();
+			} else {
+				Toast.makeText(this, "Permission Denied, Not able to load contact", Toast.LENGTH_SHORT).show();
+			}
+		}
 	}
 
 	@SuppressLint("NewApi")
