@@ -5,7 +5,7 @@ android {
 
     defaultConfig {
         applicationId "codepath.apps.demointroandroid"
-        minSdkVersion 14
+        minSdkVersion 9
         targetSdkVersion 28
     }
 
