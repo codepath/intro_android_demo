@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
@@ -6,10 +6,28 @@
     android:orientation="vertical"
     tools:context=".ContactListActivity" >
 
+    <RelativeLayout
+        android:id="@+id/acl_no_permission"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="15dp"
+            android:text="@string/permission_not_allowed"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+
     <ListView
         android:id="@+id/lvContacts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
     </ListView>
 
-</LinearLayout>
+
+</RelativeLayout>

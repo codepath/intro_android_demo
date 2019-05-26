@@ -32,5 +32,10 @@
     <string name="title_activity_persist_settings">PersistSettingsActivity</string>
     <string name="title_activity_contact_list">ContactListActivity</string>
     <string name="title_activity_publishing_instructions">PublishingInstructionsActivity</string>
+    <string name="about_clicked">About Clicked</string>
+    <string name="settings_clicked">Settings Clicked</string>
+    <string name="help_clicked">Help Clicked</string>
+    <string name="permission_not_allowed">Permission Not Allowed</string>
+
 
 </resources>
