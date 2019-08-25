@@ -5,7 +5,7 @@ android {
 
     defaultConfig {
         applicationId "codepath.apps.demointroandroid"
-        minSdkVersion 14
+        minSdkVersion 21
         targetSdkVersion 28
     }
 
@@ -18,6 +18,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:support-v4:28.0.0'
-    implementation 'com.loopj.android:android-async-http:1.4.9'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.codepath.libraries:asynchttpclient:0.1.0'
 }
