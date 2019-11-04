@@ -20,6 +20,7 @@ public class SpinnerWithToastActivity extends Activity {
 		spinner = (Spinner) findViewById(R.id.spnOptions); 
 		btnSpinnerVal = (Button) findViewById(R.id.btnSpinnerValue);
 		loadSpinner();
+
 	}
 
 	private void loadSpinner() {
