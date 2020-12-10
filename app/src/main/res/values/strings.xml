@@ -4,7 +4,7 @@
     <string name="app_name">CodePath Android Demo</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_basic_text_view">Basic TextView</string>
+    <string name="title_activity_basic_text_view">Testing git pa</string>
     <!-- Chapter 1, Exercise 3: Add string for basic textview -->
     <string name="second_textview">Second TextView for Chapter 1</string>
     <string name="title_activity_linear_layout_demo">LinearLayoutDemoActivity</string>
