@@ -32,5 +32,9 @@
     <string name="title_activity_persist_settings">PersistSettingsActivity</string>
     <string name="title_activity_contact_list">ContactListActivity</string>
     <string name="title_activity_publishing_instructions">PublishingInstructionsActivity</string>
+    <string name="submit_button">Submit button</string>
+<!--    <string name="demo_image">Demo Image</string>-->
+<!--    <string name="demo_image">Demo Image</string>-->
+    <string name="write_something">Write something</string>
 
 </resources>
