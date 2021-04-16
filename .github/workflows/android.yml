@@ -33,7 +33,7 @@ jobs:
     - name: Download a Build Artifact
       uses: actions/download-artifact@v2.0.8
       with:
-          name: Signed app bundle
+          name: app
           path: ${{github.workspace}}/signedrelease
           
     - name: upload artefact to App Center
