@@ -45,3 +45,4 @@ jobs:
          file: ${{github.workspace}}/signedrelease/app-debug.apk
          notifyTesters: true
          debug: false
+
