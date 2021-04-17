@@ -19,6 +19,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
+# Build the application
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
@@ -29,13 +30,15 @@ jobs:
       with:
          name: app
          path: app/build/outputs/apk/debug/app-debug.apk
-   
+  
+# Download a Build Artifact
     - name: Download a Build Artifact
       uses: actions/download-artifact@v2.0.8
       with:
           name: app
           path: ${{github.workspace}}/signedrelease
-          
+ 
+# Upload artifact to App Center
     - name: upload artefact to App Center
       uses: wzieba/AppCenter-Github-Action@v1
       with:
