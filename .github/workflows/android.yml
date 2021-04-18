@@ -24,7 +24,8 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
-      
+ 
+ # upload apk name and download build artifact apk should be same (32,39)
     - name: Upload APK
       uses: actions/upload-artifact@v1
       with:
@@ -38,7 +39,7 @@ jobs:
           name: app
           path: ${{github.workspace}}/signedrelease
  
-# Upload artifact to App Center
+# Upload artifact to App Center (App Name (Name/App Name), App Center Token, App Cneter Group Name, file location)
     - name: upload artefact to App Center
       uses: wzieba/AppCenter-Github-Action@v1
       with:
