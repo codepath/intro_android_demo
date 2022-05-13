@@ -11,7 +11,9 @@ public class BasicTextViewActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_basic_text_view);
-		Log.d("DEBUG", "onCreate was just called!");
+		Log.d("DEBUG", "yestoday");
+		Log.d("DEBUG", "onCreate was just called!sujune test");
+		Log.d("DEBUG", "today");
 	}
 	
 	protected void onResume() {
