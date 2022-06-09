@@ -40,7 +40,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew assembleRelease
     - name: List directory
-      run: ls -hal .
+      run: ls -hal app/build/outputs/apk/*/
     - name: Upload APK
       uses: actions/upload-artifact@v1
       with:
