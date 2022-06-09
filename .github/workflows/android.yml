@@ -39,10 +39,8 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew assembleRelease
-    - name: List directory
-      run: ls -hal app/build/outputs/apk/*/
     - name: Upload APK
       uses: actions/upload-artifact@v1
       with:
         name: app
-        path: app/build/outputs/apk/*/*.apk
+        path: app/build/outputs/apk/release/app-release-unsigned.apk
