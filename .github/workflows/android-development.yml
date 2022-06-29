@@ -39,7 +39,7 @@ jobs:
       run: chmod +x gradlew
 
     - run: ./gradlew lint
-    - uses: yutailang0119/action-android-lint@v3
+    - uses: yutailang0119/action-android-lint@1debd4a3391484ecb1ee75a371b737b67aeb5eac
       with:
         report-path: app/build/reports/*.xml # Support glob patterns by https://www.npmjs.com/package/@actions/glob
       continue-on-error: false # If annotations contain error of severity, action-android-lint exit 1.
@@ -83,4 +83,5 @@ jobs:
         tag: ${{ steps.tag_version.outputs.new_tag }}
         name: Release ${{ steps.tag_version.outputs.new_tag }}
         body: "${{ github.event.commits[0].message }} - ${{ github.sha }}"
+        prerelease: true
         artifacts: app/build/outputs/apk/*/*.apk
