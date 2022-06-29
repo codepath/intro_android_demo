@@ -74,7 +74,8 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         default_bump: patch
-        default_prerelease_bump: development
+        pre_release_branches: development
+        release_branches: master,main
 
     - name: Create a GitHub release
       uses: ncipollo/release-action@v1
