@@ -28,9 +28,6 @@ jobs:
       with:
         fetch-depth: 0
   
-    # - name: Perform Scan
-    #   uses: ShiftLeftSecurity/scan-action@master
-  
     - name: set up JDK 11
       uses: actions/setup-java@v3
       with:
@@ -40,8 +37,16 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+
+    - run: ./gradlew lint
+    - uses: yutailang0119/action-android-lint@v3
+      with:
+        report-path: build/reports/*.xml # Support glob patterns by https://www.npmjs.com/package/@actions/glob
+      continue-on-error: false # If annotations contain error of severity, action-android-lint exit 1.
+
     - name: Build with Gradle
       run: ./gradlew assembleRelease
+
     - name: Upload APK
       uses: actions/upload-artifact@v1
       with:
