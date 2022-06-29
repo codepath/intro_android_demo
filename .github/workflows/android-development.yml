@@ -74,12 +74,12 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         default_bump: patch
-        pre_release_branches: development
+        default_prerelease_bump: development
 
     - name: Create a GitHub release
       uses: ncipollo/release-action@v1
       with:
         tag: ${{ steps.tag_version.outputs.new_tag }}
         name: Release ${{ steps.tag_version.outputs.new_tag }}
-        body: ${{ steps.tag_version.outputs.changelog }} ${{ steps.tag_version.outputs.release_type }}
+        body: "${{ steps.tag_version.outputs.changelog }} ${{ steps.tag_version.outputs.release_type }}"
         artifacts: app/build/outputs/apk/*/*.apk
