@@ -82,5 +82,5 @@ jobs:
       with:
         tag: ${{ steps.tag_version.outputs.new_tag }}
         name: Release ${{ steps.tag_version.outputs.new_tag }}
-        body: "${{ steps.tag_version.outputs.changelog }} ${{ steps.tag_version.outputs.release_type }}"
+        body: "${{ github.event.commits[0].message }}"
         artifacts: app/build/outputs/apk/*/*.apk
