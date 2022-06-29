@@ -18,3 +18,18 @@ jobs:
 
       - name: Git Version
         uses: codacy/git-version@2.2.0
+        with:
+          release-branch: main
+          dev-branch: develop
+
+      - name: Tagging
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.git.createRef({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            ref: 'refs/tags/${{ needs.versioning.outputs.version }}',
+            sha: context.sha
+            })
