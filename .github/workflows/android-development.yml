@@ -53,18 +53,29 @@ jobs:
         name: app
         path: app/build/outputs/apk/release/app-release-unsigned.apk
 
-    - name: Github Tag Bump
-      id: tag_bump
-      uses: mathieudutour/github-tag-action@v6.0
-      env:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        default_bump: patch
+    # - name: Github Tag Bump
+    #   id: tag_bump
+    #   uses: mathieudutour/github-tag-action@v6.0
+    #   env:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     default_bump: patch
 
-    - name: Create a Release
-      uses: "marvinpinto/action-automatic-releases@latest"
+    # - name: Create a Release
+    #   uses: "marvinpinto/action-automatic-releases@latest"
+    #   with:
+    #     repo_token: "${{ secrets.GITHUB_TOKEN }}"
+    #     automatic_release_tag: ${{ steps.tag_bump.outputs.new_tag}}
+    #     prerelease: true
+    #     files: |
+    #       app/build/outputs/apk/*/*.apk
+    - name: Bump version and push tag
+      id: tag_version
+      uses: mathieudutour/github-tag-action@v6.0
       with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: ${{ steps.tag_bump.outputs.new_tag}}
-        prerelease: true
-        files: |
-          app/build/outputs/apk/*/*.apk
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create a GitHub release
+      uses: ncipollo/release-action@v1
+      with:
+        tag: ${{ steps.tag_version.outputs.new_tag }}
+        name: Release ${{ steps.tag_version.outputs.new_tag }}
+        body: ${{ steps.tag_version.outputs.changelog }}
