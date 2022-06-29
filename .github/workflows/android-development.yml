@@ -41,7 +41,7 @@ jobs:
     - run: ./gradlew lint
     - uses: yutailang0119/action-android-lint@v3
       with:
-        report-path: build/reports/*.xml # Support glob patterns by https://www.npmjs.com/package/@actions/glob
+        report-path: app/build/reports/*.xml # Support glob patterns by https://www.npmjs.com/package/@actions/glob
       continue-on-error: false # If annotations contain error of severity, action-android-lint exit 1.
 
     - name: Build with Gradle
@@ -73,9 +73,13 @@ jobs:
       uses: mathieudutour/github-tag-action@v6.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        default_bump: patch
+        pre_release_branches: development
+
     - name: Create a GitHub release
       uses: ncipollo/release-action@v1
       with:
         tag: ${{ steps.tag_version.outputs.new_tag }}
         name: Release ${{ steps.tag_version.outputs.new_tag }}
-        body: ${{ steps.tag_version.outputs.changelog }}
+        body: ${{ steps.tag_version.outputs.changelog }} ${{ steps.tag_version.outputs.release_type }}
+        artifacts: app/build/outputs/apk/*/*.apk
