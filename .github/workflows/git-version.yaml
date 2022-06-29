@@ -22,14 +22,7 @@ jobs:
         #   release-branch: main
         #   dev-branch: develop
 
-      - name: Tagging
-        uses: actions/github-script@v5
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            github.rest.git.createRef({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            ref: 'refs/tags/${{ needs.versioning.outputs.version }}',
-            sha: context.sha
-            })
+      - name: Github Tag Bump
+        uses: anothrNick/github-tag-action@1.39.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
