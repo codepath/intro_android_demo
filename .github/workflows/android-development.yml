@@ -26,7 +26,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        fetch-depth: 0     
+        fetch-depth: 0
+  
+    - name: Secret scan
+      uses: max/secret-scan@master
+  
     - name: set up JDK 11
       uses: actions/setup-java@v3
       with:
