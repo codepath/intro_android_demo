@@ -67,3 +67,5 @@ import-summary.txt
 
 .vscode/
 .vscode/**
+
+.git-credentials
