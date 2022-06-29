@@ -82,5 +82,5 @@ jobs:
       with:
         tag: ${{ steps.tag_version.outputs.new_tag }}
         name: Release ${{ steps.tag_version.outputs.new_tag }}
-        body: "${{ github.event.commits[0].message }}"
+        body: "${{ github.event.commits[0].message }} - ${{ github.sha }}"
         artifacts: app/build/outputs/apk/*/*.apk
