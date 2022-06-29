@@ -1,4 +1,4 @@
-new_new_intro_android_demo
+new_intro_android_demo
 ==================
 
 Demo of app exercises for Intro to Android App Development
