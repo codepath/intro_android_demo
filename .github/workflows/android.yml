@@ -2,10 +2,7 @@ name: Android CI
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
+    branches: [ "development" ]
 jobs:
 #   test:
 #     name: Run Unit Tests
@@ -44,3 +41,20 @@ jobs:
       with:
         name: app
         path: app/build/outputs/apk/release/app-release-unsigned.apk
+
+    - name: Github Tag Bump
+      id: tag_bump
+      uses: anothrNick/github-tag-action@1.39.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DEFAULT_BUMP: patch
+
+    - name: Create a Release
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: ${{ steps.tag_bump.outputs.new_tag}}
+        files: |
+          app/build/outputs/apk/*/*.apk
