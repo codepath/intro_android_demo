@@ -64,3 +64,6 @@ local.properties
 .idea
 build
 import-summary.txt
+
+.vscode/
+.vscode/**
