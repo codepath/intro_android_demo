@@ -1,9 +1,8 @@
-# .github/workflows/veracode-scan.yml
 name: Veracode Security Scan
 
 on:
   schedule:
-    - 0 0 * * *
+    - cron: '0 0 * * *'
 
 jobs:
   static_analysis:
