@@ -51,10 +51,6 @@
             android:label="@string/title_activity_basic_click_handlers" >
         </activity>
         <activity
-            android:name="codepath.apps.demointroandroid.ButtonToastActivity"
-            android:label="@string/title_activity_button_toast" >
-        </activity>
-        <activity
             android:name="codepath.apps.demointroandroid.ListViewClicksActivity"
             android:label="@string/title_activity_list_view_clicks" >
         </activity>

@@ -13,7 +13,6 @@
     <string name="title_activity_view_attributes">ViewAttributesActivity</string>
     <string name="title_activity_simple_list_view">SimpleListViewActivity</string>
     <string name="title_activity_basic_click_handlers">BasicClickHandlersActivity</string>
-    <string name="title_activity_button_toast">ButtonToastActivity</string>
     <string name="title_activity_list_view_clicks">ListViewClicksActivity</string>
     <string name="title_activity_explicit_intent">ExplicitIntentActivity</string>
     <string name="title_activity_implicit_intents">ImplicitIntentsActivity</string>
