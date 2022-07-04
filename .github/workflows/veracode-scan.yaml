@@ -1,0 +1,101 @@
+# .github/workflows/veracode-scan.yml
+name: Veracode Security Scan
+
+on:
+  schedule:
+    - 0 0 * * *
+
+jobs:
+  static_analysis:
+    name: Static Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check out main branch
+        uses: actions/checkout@v3
+        
+      - name: Build with gradle
+        run: bash ./gradlew build
+          
+      - name: Veracode Upload And Scan
+        run: echo "Veracode Scan step"
+      # - name: Veracode Upload And Scan
+      #   uses: veracode/veracode-uploadandscan-action@0.2.1
+      #   with:
+      #     appname: 'VeraDemo'
+      #     createprofile: false
+      #     filepath: 'app/target/verademo.war'
+      #     vid: '${{ secrets.API_ID }}'
+      #     vkey: '${{ secrets.API_KEY }}'
+#          createsandbox: 'true'
+#          sandboxname: 'SANDBOXNAME'
+#          scantimeout: 0
+#          exclude: '*.js'
+#          include: '*.war'
+#          criticality: 'VeryHigh'
+
+  # veracode-sca-task:
+  #   runs-on: ubuntu-latest
+  #   name: Scan repository for Issues
+
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
+  #     - name: Run Veracode SCA
+  #       env:
+  #         SRCCLR_API_TOKEN: ${{ secrets.SRCCLR_API_TOKEN }}
+  #       uses: veracode/veracode-sca@v1.0.9
+
+  #       with:
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #         quick: true
+  #         create-issues: true 
+  #         fail-on-cvss: 1
+  #         min-cvss-for-issue: 1
+
+  # get-policy-flaws:
+  #   runs-on: ubuntu-latest
+  #   container: 
+  #     image: veracode/api-signing:latest
+  #   steps:
+  #     - name: get policy flaws
+  #       run: |
+  #           cd /tmp
+  #           export VERACODE_API_KEY_ID=${{ secrets.VERACODE_API_ID }}
+  #           export VERACODE_API_KEY_SECRET=${{ secrets.VERACODE_API_KEY }}
+  #           guid=$(http --auth-type veracode_hmac GET "https://api.veracode.com/appsec/v1/applications?name=1%20Verademo" | jq -r '._embedded.applications[0].guid') 
+  #           echo GUID: ${guid}
+  #           total_flaws=$(http --auth-type veracode_hmac GET "https://api.veracode.com/appsec/v2/applications/${guid}/findings?scan_type=STATIC&violates_policy=True" | jq -r '.page.total_elements')
+  #           echo TOTAL_FLAWS: ${total_flaws}
+  #           http --auth-type veracode_hmac GET "https://api.veracode.com/appsec/v2/applications/${guid}/findings?scan_type=STATIC&violates_policy=True&size=${total_flaws}" > policy_flaws.json
+  #     - name: save results file
+  #       uses: actions/upload-artifact@v2
+  #       with:
+  #         name: policy-flaws
+  #         path: /tmp/policy_flaws.json
+
+
+  # import_flaws_job:
+  #   runs-on: ubuntu-latest
+  #   needs: get-policy-flaws
+  #   name: import flaws
+
+  #   steps:
+  #     - name: checkout
+  #       uses: actions/checkout@v2
+
+  #     - name: get flaw file
+  #       uses: actions/download-artifact@v2
+  #       with:
+  #         name: policy-flaws
+  #         path: /tmp
+
+  #     - name: Flaw importer action step
+  #       id: import
+  #       uses: ./
+  #       with:
+  #         scan-results-json: '/tmp/policy_flaws.json'
+  #         github-token: ${{ secrets.GITHUB_TOKEN }}
+  #         source-base-path_1: "com/veracode:src/main/java/com/veracode" 
+  #         source-base-path_2: "WEB-INF:src/main/webapp/WEB-INF"
+  #         commit-hash: ${{ GITHUB.SHA }}
