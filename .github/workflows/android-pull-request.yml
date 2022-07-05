@@ -2,7 +2,7 @@ name: Android CI/CD Pull Request Pre-check
 
 on:
   pull_request:
-    branches: [ "development", "master" ]
+    branches: [ "integration-**", "release-**", "master" ]
 jobs:
   lint:
     name: Run Lint Check
