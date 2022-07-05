@@ -1,9 +1,8 @@
 name: Android CI/CD Pull Request Pre-check
 
-on: [workflow_dispatch]
-    
-  # pull_request:
-  #   branches: [ "integration-**", "release-**", "master" ]
+on:
+  pull_request:
+    branches: [ "integration-**", "release-**", "master" ]
 jobs:
   lint:
     name: Run Lint Check
