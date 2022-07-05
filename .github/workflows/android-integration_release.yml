@@ -36,7 +36,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         default_bump: patch
-        pre_release_branches: release.*, integration.*
+        pre_release_branches: integration.*
         release_branches: master
 
     - name: Create a GitHub release
