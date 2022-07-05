@@ -1,4 +1,4 @@
-name: Android CI/CD Integration
+name: Android CI/CD Integration/Release
 
 on:
   push:
@@ -36,7 +36,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         default_bump: patch
-        pre_release_branches: release-*, integration-*
+        pre_release_branches: release.*, integration.*
         release_branches: master
 
     - name: Create a GitHub release
